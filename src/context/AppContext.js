@@ -1,12 +1,14 @@
 "use client"
 
 import axios from "axios";
-import { useCallback,useContext,createContext,useState } from "react";
+import { getCloneableBody } from "next/dist/server/body-streams";
+import { useCallback,useContext,createContext,useState, useEffect } from "react";
 
 const AppContext = createContext();
 
 export const AppContextProvider = ({children}) =>{
     const [lugares, setLugares] = useState([]);
+    const [lugar, setLugar] = useState({});
     const [eventos, setEventos] = useState([]);
     const [barrios, setBarrios] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -25,6 +27,7 @@ export const AppContextProvider = ({children}) =>{
 
         const getEventos = useCallback(async() => {
             try{
+                setLoading(true);
                 const response = await axios.get("https://maimo-prog3-2025-vm-api.vercel.app/eventos");
                 setEventos(response.data.eventos);
                 setLoading(false);
@@ -42,12 +45,29 @@ export const AppContextProvider = ({children}) =>{
                 setError(true);
                 alert("BARRIO HAS FAILED")
             }
-        },[])
+        },[]);
+        
+        const getOneLugar = useCallback(async(id)=>{
+            try{
+                const res = await axios.get(`https://maimo-prog3-2025-vm-api.vercel.app/lugares/${id}`);
+                console.log(res.data.lugar);
+                setLugar(res.data.lugar);
+                setLoading(false);
+            }catch(error){
+                console.log(error);
+            }
+        },[]);
 
+        useEffect(() => {
+            getBarrios();
+            getEventos();
+            getLugares();
+        },[]);
+        
     return (
     <AppContext.Provider
         value={{
-            getLugares, lugares, loading, error, getEventos, eventos, barrios, getBarrios
+            getLugares, lugares, loading, error, getEventos, eventos, barrios, getBarrios, getOneLugar, lugar
         }}
     >
         {children}

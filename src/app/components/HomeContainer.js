@@ -7,11 +7,11 @@ const HomeContainer = () => {
   return (
     <>
     <h1>LUGARES!</h1>
-    <PlaceGrid/>
+      <PlaceGrid/>
     <h1>EVENTOS!</h1>
-    <EventGrid/>
+      <EventGrid/>
     <h1>BARRIO</h1>
-    <BarrioGrid/>
+      <BarrioGrid/>
     </>
   )
 }
