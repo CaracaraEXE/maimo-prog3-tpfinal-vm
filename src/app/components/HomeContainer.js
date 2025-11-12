@@ -1,17 +1,27 @@
 import React from 'react'
-import PlaceGrid from './PlaceGrid'
-import EventGrid from './EventGrid'
-import BarrioGrid from './BarrioGrid'
+import Image from 'next/image'
 
 const HomeContainer = () => {
   return (
     <>
-    <h1>LUGARES!</h1>
-      <PlaceGrid/>
-    <h1>EVENTOS!</h1>
-      <EventGrid/>
-    <h1>BARRIO</h1>
-      <BarrioGrid/>
+    <section className='static'>
+      <Image
+        src={'/assets/deer.png'}
+        alt={'header'}
+        height={100}
+        width={500}
+      />
+    </section>
+
+    <p className='px-2 text-center'>Creado por y para personas con discapacidades.</p>
+    
+    <section className='flex flex-col h-60 lg:flex-row'>
+      <button className='bg-orange-700 h-full w-full text-2xl'>LUGARES</button>
+      <button className='bg-teal-700 h-full w-full text-2xl'>Eventos</button>
+    </section>
+
+    <button>O sino buscá por Barrio!</button>
+    
     </>
   )
 }
