@@ -1,9 +1,15 @@
+'use client'
+
+import { useState } from 'react'
 import React from 'react'
 import PlaceGrid from './PlaceGrid'
 import EventGrid from './EventGrid'
 import BarrioGrid from './BarrioGrid'
 
 const HomeContainer = () => {
+
+
+
   return (
     <>
     <h1>LUGARES!</h1>
