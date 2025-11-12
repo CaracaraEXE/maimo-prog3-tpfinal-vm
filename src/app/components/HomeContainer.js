@@ -20,7 +20,7 @@ const HomeContainer = () => {
       <button className='bg-teal-700 h-full w-full text-2xl'>Eventos</button>
     </section>
 
-    <button>O sino buscá por Barrio!</button>
+    <button className='bg-gray-700 p-2 px-4 rounded-3xl'>O sino buscá por Barrio! </button>
     
     </>
   )
