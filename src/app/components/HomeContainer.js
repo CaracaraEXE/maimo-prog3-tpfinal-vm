@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Footer from './Footer'
 
 const HomeContainer = () => {
   return (
@@ -22,6 +23,7 @@ const HomeContainer = () => {
 
     <button className='bg-gray-700 p-2 px-4 rounded-3xl'>O sino buscá por Barrio! </button>
     
+    <Footer/>
     </>
   )
 }
