@@ -23,7 +23,6 @@ const HomeContainer = () => {
 
     <button className='bg-gray-700 p-2 px-4 rounded-3xl'>O sino buscá por Barrio! </button>
     
-    <Footer/>
     </>
   )
 }
