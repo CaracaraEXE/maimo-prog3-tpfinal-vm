@@ -1,8 +1,14 @@
+'use client'
+
+import { useState } from 'react'
 import React from 'react'
 import Image from 'next/image'
 import Footer from './Footer'
 
 const HomeContainer = () => {
+
+
+
   return (
     <div className='flex flex-col justify-center'>
     <section className='static'>
