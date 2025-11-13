@@ -13,7 +13,10 @@ const EventosCont = () => {
     },[]);
 
   return (
-    <MainGrid array={eventos}/>
+    <>
+    <h1 className='text-center text-4xl text-green-700'>Eventos</h1>
+        <MainGrid array={eventos}/>
+    </>
   )
 }
 

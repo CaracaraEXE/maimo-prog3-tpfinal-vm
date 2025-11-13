@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Link from 'next/link';
 import Image from 'next/image';
 import { useAppContext } from '@/context/AppContext';
 
 const MainGrid = ({array}) => {
 
-  const {barrios} = useAppContext();
+  const {barrios, getBarrios} = useAppContext();
+
+   useEffect(() => {
+          getBarrios();
+      },[]);
+  
 
   return (
     <section className='px-5 lg:p-5 lg:flex lg:flex-wrap'>
@@ -28,7 +33,7 @@ const MainGrid = ({array}) => {
                   <p className='text-[0.85em]'>Entrada: <span className='font-bold'>{item.entrada}</span></p>
                     {item.fecha ? <p className='text-[0.85em]'>Fecha: <span className='font-bold'>{item.fecha}</span></p> : ""}
                 </div>
-                <Link href={`/lugar/${item._id}`}>Mira...</Link>
+                <Link href={`/${item.fecha ? "evento" : "lugar"}/${item._id}`}>Mira...</Link>
               </section>
             </article>
         )}

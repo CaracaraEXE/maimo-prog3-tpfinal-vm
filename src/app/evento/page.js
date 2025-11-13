@@ -3,7 +3,9 @@ import EventosCont from '../components/EventosCont'
 
 const EventosPage = () => {
   return (
-    <EventosCont/>
+    <div className='py-5 bg-green-50'>
+      <EventosCont/>
+    </div>
   )
 }
 

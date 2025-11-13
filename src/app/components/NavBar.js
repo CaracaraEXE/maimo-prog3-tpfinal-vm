@@ -40,8 +40,8 @@ const NavBar = () => {
     </section>
     {nav &&
     <nav className='p-4 pl-8 list-none bg-gray-500'>
-      <li className='mb-3 lg:mb-2 text-2xl lg:text-[1em] hover:font-bold transition'>Eventos</li>
-      <li className='mb-3 lg:mb-2 text-2xl lg:text-[1em] hover:font-bold transition'>Lugares</li>
+      <li className='mb-3 lg:mb-2 text-2xl lg:text-[1em] hover:font-bold transition'><Link href={'/evento'}>Eventos</Link></li>
+      <li className='mb-3 lg:mb-2 text-2xl lg:text-[1em] hover:font-bold transition'><Link href={'/lugar'}>Lugares</Link></li>
       <li className='mb-3 lg:mb-2 text-2xl lg:text-[1em] hover:font-bold transition'>Calendario</li>
       <li className='mb-3 lg:mb-2 text-2xl lg:text-[1em] hover:font-bold transition'>Sobre Nosotros</li>
       <li className='text-2xl lg:text-[1em] hover:font-bold transition'>¡NO A LOS CUD FALSOS!</li>

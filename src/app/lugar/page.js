@@ -3,7 +3,7 @@ import LugaresCont from '../components/LugaresCont'
 
 const lugarPages = () => {
   return (
-    <div className='bg-white'>
+    <div className='py-5 bg-green-50'>
         <LugaresCont/>
     </div>
   )
