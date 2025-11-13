@@ -24,8 +24,26 @@ const HomeContainer = () => {
     <p className='px-2 text-center py-5'>Creado por y para personas con discapacidades.</p>
     
     <section className='flex flex-col h-60 lg:h-50 lg:flex-row'>
-      <button className='bg-orange-700 h-full w-full text-2xl'>LUGARES</button>
-      <button className='bg-teal-700 h-full w-full text-2xl'>Eventos</button>
+      <button className='bg-orange-700 h-full w-full text-2xl flex flex-col items-center justify-center'>
+         <Image
+        src={'/assets/map.svg'}
+        alt={'header'}
+        height={20}
+        width={80}
+        className=''
+      />
+      Lugares
+      </button>
+      <button className='bg-teal-700 h-full w-full text-2xl flex flex-col items-center justify-center'>
+         <Image
+        src={'/assets/calendar.svg'}
+        alt={'header'}
+        height={20}
+        width={80}
+        className=''
+      />
+        Eventos
+        </button>
     </section>
 
     <p className='text-center mt-5'>VER POR MAPA:</p>
