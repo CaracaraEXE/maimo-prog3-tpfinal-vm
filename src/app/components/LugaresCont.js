@@ -1,14 +1,21 @@
 'use client'
-import React from 'react'
-import { useEffect } from 'react'
+
+import React, { useEffect } from 'react'
 import { useAppContext } from '@/context/AppContext'
+import MainGrid from './MainGrid';
 
 const LugaresCont = () => {
+  const {lugares, getLugares} = useAppContext();
 
-    const {lugares, getLugares} = useAppContext();
+    useEffect(() =>{
+        getLugares();
+    },[])
 
   return (
-    <div>LugaresCont</div>
+    <div>
+        <h1 className='text-center text-4xl mt-5'>Lugares</h1>
+        <MainGrid array={lugares}/>
+    </div>
   )
 }
 
