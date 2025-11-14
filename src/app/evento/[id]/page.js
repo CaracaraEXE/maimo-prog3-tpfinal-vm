@@ -1,8 +1,11 @@
+import EventoContainer from '@/app/components/EventoContainer';
 import React from 'react'
 
-const eventoPage = () => {
+const eventoPage = async({params}) => {
+      const {id} = await params;
+
   return (
-    <div>eventoPage</div>
+    <EventoContainer id={id}/>
   )
 }
 

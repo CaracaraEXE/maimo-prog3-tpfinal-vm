@@ -10,6 +10,7 @@ export const AppContextProvider = ({children}) =>{
     const [lugares, setLugares] = useState([]);
     const [lugar, setLugar] = useState({});
     const [eventos, setEventos] = useState([]);
+    const [evento, setEvento] = useState([]);
     const [barrios, setBarrios] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
@@ -51,13 +52,23 @@ export const AppContextProvider = ({children}) =>{
         const getOneLugar = useCallback(async(id)=>{
             try{
                 const res = await axios.get(`https://maimo-prog3-2025-vm-api.vercel.app/lugares/${id}`);
-                console.log(res.data.lugar);
                 setLugar(res.data.lugar);
                 setLoading(false);
             }catch(error){
-                console.log(error);
+                setError(true);
             }
         },[]);
+
+        const getOneEvento = useCallback(async(id) => {
+            try{
+                const res = await axios.get(`https://maimo-prog3-2025-vm-api.vercel.app/eventos/${id}`);
+                setEvento(res.data.evento);
+                setLoading(false);
+            }catch(error){
+                setError(true);
+
+            }
+        })
 
         useEffect(() => {
             getBarrios();
@@ -69,7 +80,7 @@ export const AppContextProvider = ({children}) =>{
     return (
     <AppContext.Provider
         value={{
-            getLugares, lugares, loading, error, getEventos, eventos, barrios, getBarrios, getOneLugar, lugar, nav, setNav
+            getLugares, lugares, loading, error, getEventos, eventos, barrios, getBarrios, getOneLugar, lugar, nav, setNav, getOneEvento, evento
         }}
     >
         {children}

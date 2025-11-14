@@ -9,9 +9,6 @@ const LugarContainer = ({id}) => {
 
   const {getOneLugar,lugar, loading, error, getBarrios, barrios} = useAppContext()
   const dias = ["L", "M", "X", "J", "V", "S", "D"];
-  const semana = lugar.semana;
-  const URL = lugar.howto;
-  console.log(semana, URL);
 
   useEffect(() => {
     getOneLugar(id);
@@ -37,7 +34,7 @@ const LugarContainer = ({id}) => {
             <tr>
               <td>Barrios</td>
               <td>{
-                      //barrios.find(barr => barr._id === lugar.barrio[0]).name
+                      lugar.barrio ? barrios.find(barr => barr._id === lugar.barrio[0]).name : "Cargando..."
                     }</td>
             </tr>
             <tr>
@@ -63,18 +60,22 @@ const LugarContainer = ({id}) => {
         </table>
         
           <ul className='flex gap-2'>
-            {dias.map((dia, i) =>
-            <li key={dia} className={`semdia list-none p-1 px-2 border-white border-2 rounded-[0.5em] text-white bg-lime-700 ${semana[i] ? "" : "opacity-50 bg-red-900 text-black"}`}>
+            { lugar.semana?
+            dias.map((dia, i) =>
+            <li key={dia} className={`semdia list-none p-1 px-2 border-white border-2 rounded-[0.5em] text-white bg-lime-700 ${lugar.semana[i] ? "" : "opacity-50 bg-red-900 text-black"}`}>
               {dia}    
             </li>
-            )}
+            )
+            :
+            "Cargando..."
+            }
           </ul>
 
 
         <h2 className='lg:text-3xl'>Ubicación en el Mapa</h2>
 
         <h2 className='lg:text-3xl'>¿Como ir?</h2>
-            <Link className='bg-gray-700 p-2 px-4 rounded-3xl w-fit m-auto my-4 text-[1em] lg:px-10 lg:text-2xl' href={lugar.howto}>Ver en Google Maps</Link>
+            {lugar.howto ? <Link className='bg-gray-700 p-2 px-4 rounded-3xl w-fit m-auto my-4 text-[1em] lg:px-10 lg:text-2xl' href={lugar.howto}>Ver en Google Maps</Link> : "Cargando..."}
         </section>
         </div>
     }
