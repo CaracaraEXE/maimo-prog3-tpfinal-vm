@@ -7,17 +7,17 @@ import React, { useEffect } from 'react'
 
 const EventoContainer = ({id}) => {
 
-    const {evento, getOneEvento, loading, error, getBarrios} = useAppContext();
+    const {evento, getOneEvento, loading, error,  barrios} = useAppContext();
 
      useEffect(() => {
         getOneEvento(id);
-        getBarrios();
       },[])  
 
   return (
      <>
     {!loading &&
     <div className='flex flex-col items-center justify-center align-center mx-auto w-fit lg:w-full lg:py-6'>
+      <Link href='/evento'>AFUERA</Link>
       <h1 className='text-center text-3xl lg:text-5xl'>{evento.nombre}</h1>
       <Image
         src={'/assets/squareph.jpg'}
@@ -27,14 +27,14 @@ const EventoContainer = ({id}) => {
         className='rounded-2xl lg:w-full lg:h-100'
       />
       <section>
-        <h2>Infoormacion Basica</h2>
+        <h2>Informacion Basica</h2>
          <table>
           <tbody>
             <tr>
               <td>Barrios</td>
-              <td>{
-                      evento.barrio ? barrios.find(barr => barr._id === evento.barrio[0]).name : "Cargando..."
-                    }</td>
+              <td>{evento?.barrio && barrios
+                  ? barrios.find(barr => barr._id === evento.barrio)?.name
+                  : "Cargando..."}</td>
             </tr>
             <tr>
               <td>Dirección</td>
@@ -62,7 +62,7 @@ const EventoContainer = ({id}) => {
         <h2 className='lg:text-3xl'>Ubicación en el Mapa</h2>
 
         <h2 className='lg:text-3xl'>¿Como ir?</h2>
-            {evento.howto ? <Link className='bg-gray-700 p-2 px-4 rounded-3xl w-fit m-auto my-4 text-[1em] lg:px-10 lg:text-2xl' href={lugar.howto}>Ver en Google Maps</Link> : "Cargando..."}
+            {evento.howto ? <Link className='bg-gray-700 p-2 px-4 rounded-3xl w-fit m-auto my-4 text-[1em] lg:px-10 lg:text-2xl' href={evento.howto}>Ver en Google Maps</Link> : "Cargando..."}
       </section>
     </div>
     }

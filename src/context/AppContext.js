@@ -63,7 +63,6 @@ export const AppContextProvider = ({children}) =>{
             try{
                 const res = await axios.get(`https://maimo-prog3-2025-vm-api.vercel.app/eventos/${id}`);
                 setEvento(res.data.evento);
-                console.log(res.data.evento);
                 setLoading(false);
             }catch(error){
                 setError(true);
