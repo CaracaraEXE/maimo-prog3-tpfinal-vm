@@ -4,6 +4,7 @@ import { useState } from 'react'
 import React from 'react'
 import Image from 'next/image'
 import Footer from './Footer'
+import Link from 'next/link'
 
 const HomeContainer = () => {
 
@@ -24,7 +25,7 @@ const HomeContainer = () => {
     <p className='px-2 text-center py-5'>Creado por y para personas con discapacidades.</p>
     
     <section className='flex flex-col h-60 lg:h-50 lg:flex-row'>
-      <button className='bg-orange-700 h-full w-full text-2xl flex flex-col items-center justify-center'>
+      <Link className='bg-orange-700 h-full w-full text-2xl flex flex-col items-center justify-center' href={'/lugar'}>
          <Image
         src={'/assets/map.svg'}
         alt={'header'}
@@ -33,8 +34,8 @@ const HomeContainer = () => {
         className=''
       />
       Lugares
-      </button>
-      <button className='bg-teal-700 h-full w-full text-2xl flex flex-col items-center justify-center'>
+      </Link>
+      <Link className='bg-teal-700 h-full w-full text-2xl flex flex-col items-center justify-center' href={'/evento'}>
          <Image
         src={'/assets/calendar.svg'}
         alt={'header'}
@@ -43,7 +44,7 @@ const HomeContainer = () => {
         className=''
       />
         Eventos
-        </button>
+        </Link>
     </section>
 
     <p className='text-center mt-5'>VER POR MAPA:</p>

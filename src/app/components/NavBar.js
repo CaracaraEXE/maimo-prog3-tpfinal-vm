@@ -1,5 +1,6 @@
 'use client'
 
+import { useAppContext } from '@/context/AppContext'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -7,7 +8,7 @@ import { useState } from 'react'
 
 const NavBar = () => {
 
-  const [nav, setNav] = useState(false);
+  const {nav,setNav} = useAppContext();
 
   return (
     <div>
@@ -36,7 +37,7 @@ const NavBar = () => {
           </button>
 
     }
-      <span className='text-3xl'>VJ</span>
+      <Link href={'/'}><span className='text-3xl'>VJ</span></Link>
     </section>
     {nav &&
     <nav className='p-4 pl-8 list-none bg-gray-500'>

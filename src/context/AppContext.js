@@ -13,6 +13,7 @@ export const AppContextProvider = ({children}) =>{
     const [barrios, setBarrios] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
+    const [nav, setNav] = useState(false);
 
     const getLugares = useCallback(async() => {
             try{
@@ -62,12 +63,13 @@ export const AppContextProvider = ({children}) =>{
             getBarrios();
             getEventos();
             getLugares();
+            setNav(false);
         },[]);
         
     return (
     <AppContext.Provider
         value={{
-            getLugares, lugares, loading, error, getEventos, eventos, barrios, getBarrios, getOneLugar, lugar
+            getLugares, lugares, loading, error, getEventos, eventos, barrios, getBarrios, getOneLugar, lugar, nav, setNav
         }}
     >
         {children}
