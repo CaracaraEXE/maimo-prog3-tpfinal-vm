@@ -33,9 +33,9 @@ const LugarContainer = ({id}) => {
           <tbody>
             <tr>
               <td>Barrios</td>
-              <td>{
-                      lugar.barrio ? barrios.find(barr => barr._id === lugar.barrio[0]).name : "Cargando..."
-                    }</td>
+              <td>{lugar?.barrio && barrios
+                  ? barrios.find(barr => barr._id === lugar.barrio)?.name
+                  : "Cargando..."}</td>
             </tr>
             <tr>
               <td>Dirección</td>
@@ -60,7 +60,7 @@ const LugarContainer = ({id}) => {
         </table>
         
           <ul className='flex gap-2'>
-            { lugar.semana?
+            { lugar?.semana?
             dias.map((dia, i) =>
             <li key={dia} className={`semdia list-none p-1 px-2 border-white border-2 rounded-[0.5em] text-white bg-lime-700 ${lugar.semana[i] ? "" : "opacity-50 bg-red-900 text-black"}`}>
               {dia}    
