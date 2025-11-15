@@ -11,20 +11,14 @@ const HomeContainer = () => {
 
   return (
     <div className='flex flex-col justify-center'>
-    <section className='static'>
-      <Image
-        src={'/assets/deer.png'}
-        alt={'header'}
-        height={100}
-        width={500}
-        className='lg:w-full lg:h-80'
-      />
+      
+    <section className='bg-[url("/assets/deer.png")] bg-cover bg-center h-120 flex flex-col items-center justify-center px-10 mb-10'>
+      <h1 className='text-5xl text-center'><span className='font-bold'>Vamos Juntos</span>, que afuera está hermoso.</h1>
+          <p className='px-2 text-center py-5'>Guía de viaje por y para personas con discapacidad.</p>
     </section>
-
-    <p className='px-2 text-center py-5'>Creado por y para personas con discapacidades.</p>
     
-    <section className='flex flex-col h-60 lg:h-50 lg:flex-row'>
-      <button className='bg-orange-700 h-full w-full text-2xl flex flex-col items-center justify-center'>
+    <section className='flex flex-col lg:h-50 lg:flex-row'>
+      <button className='bg-orange-700 h-full w-full text-3xl flex flex-col items-center justify-center py-10'>
          <Image
         src={'/assets/map.svg'}
         alt={'header'}
@@ -34,7 +28,7 @@ const HomeContainer = () => {
       />
       Lugares
       </button>
-      <button className='bg-teal-700 h-full w-full text-2xl flex flex-col items-center justify-center'>
+      <button className='bg-teal-700 h-full w-full text-3xl flex flex-col items-center justify-center py-10'>
          <Image
         src={'/assets/calendar.svg'}
         alt={'header'}
@@ -49,7 +43,7 @@ const HomeContainer = () => {
     <p className='text-center mt-5'>VER POR MAPA:</p>
 
 
-    <button className='bg-gray-700 p-2 px-4 rounded-3xl w-fit m-auto my-4 text-[1.25em] lg:px-10 lg:text-2xl'>O sino buscá por Barrio! </button>
+    <button className='bg-gray-700 p-2 px-4 rounded-3xl w-fit m-auto my-4 text-[1.5em] lg:px-10 lg:text-2xl'>O sino buscá por Barrio! </button>
     
     </div>
   )
