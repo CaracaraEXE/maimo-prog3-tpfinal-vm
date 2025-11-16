@@ -4,6 +4,7 @@ import { useState } from 'react'
 import React from 'react'
 import Image from 'next/image'
 import Footer from './Footer'
+import Link from 'next/link'
 
 const HomeContainer = () => {
 
@@ -37,7 +38,7 @@ const HomeContainer = () => {
         className=''
       />
         Eventos
-        </button>
+        </Link>
     </section>
 
     <p className='text-center mt-5'>VER POR MAPA:</p>

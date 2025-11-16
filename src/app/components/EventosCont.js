@@ -1,23 +1,23 @@
 'use client'
 
 import React, { useEffect } from 'react'
+import MainGrid from './MainGrid'
 import { useAppContext } from '@/context/AppContext'
 
-const EventGrid = () => {
+const EventosCont = () => {
 
     const {getEventos,eventos} = useAppContext();
-
+    
     useEffect(() => {
         getEventos();
     },[]);
 
   return (
-    <div>
-        {eventos.map(evento => 
-            <div key={evento._id}>{evento.nombre}</div>
-        )}
-    </div>
+    <>
+    <h1 className='text-center text-4xl text-green-700'>Eventos</h1>
+        <MainGrid array={eventos}/>
+    </>
   )
 }
 
-export default EventGrid
+export default EventosCont

@@ -1,5 +1,6 @@
 'use client'
 
+import { useAppContext } from '@/context/AppContext'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -7,7 +8,7 @@ import { useState } from 'react'
 
 const NavBar = () => {
 
-  const [nav, setNav] = useState(false);
+  const {nav,setNav} = useAppContext();
 
   return (
     <div>
@@ -36,12 +37,12 @@ const NavBar = () => {
           </button>
 
     }
-      <span className='text-3xl'>VJ</span>
+      <Link href={'/'}><span className='text-3xl'>VJ</span></Link>
     </section>
     {nav &&
     <nav className='p-4 pl-8 list-none bg-gray-500'>
-      <li className='mb-3 lg:mb-2 text-2xl lg:text-[1em] hover:font-bold transition'>Eventos</li>
-      <li className='mb-3 lg:mb-2 text-2xl lg:text-[1em] hover:font-bold transition'>Lugares</li>
+      <li className='mb-3 lg:mb-2 text-2xl lg:text-[1em] hover:font-bold transition'><Link href={'/evento'}>Eventos</Link></li>
+      <li className='mb-3 lg:mb-2 text-2xl lg:text-[1em] hover:font-bold transition'><Link href={'/lugar'}>Lugares</Link></li>
       <li className='mb-3 lg:mb-2 text-2xl lg:text-[1em] hover:font-bold transition'>Calendario</li>
       <li className='mb-3 lg:mb-2 text-2xl lg:text-[1em] hover:font-bold transition'>Sobre Nosotros</li>
       <li className='text-2xl lg:text-[1em] hover:font-bold transition'>¡NO A LOS CUD FALSOS!</li>
