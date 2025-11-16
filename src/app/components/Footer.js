@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 
@@ -9,12 +10,12 @@ const Footer = () => {
 
         <section className='flex lg:justify-between lg:w-full'>
             <nav className='list-none'>
-                <li className='mt-[-0.25em]  font-bold'>Sobre Nosotros</li>
+                <li className='mt-[-0.25em]  font-bold'><Link href={'/nosotros'}>Sobre Nosotros</Link></li>
                 <li className='mt-[-0.25em] lg:mt-[-0.15em] font-bold'>Lugares</li>
                 <li className='mt-[-0.25em] lg:mt-[-0.15em] font-bold'>Eventos</li>
                 <li className='mt-[-0.25em] lg:mt-[-0.15em] font-bold'>Mapa</li>
                 <li className='mt-[-0.25em] lg:mt-[-0.15em] font-bold'>Calendario</li>
-                <li className='mt-[-0.10em] lg:mt-[-0.05em] leading-4 font-bold'>¡NO A LOS CUDS FALSOS!</li>
+                <li className='mt-[-0.10em] lg:mt-[-0.05em] leading-4 font-bold'><Link href={'/alerta'}>¡NO A LOS CUDS FALSOS!</Link></li>
             </nav>
             <div className='flex flex-col items-end'>
                 <p className='leading-3.5'>Seguí el proyecto en:</p>
