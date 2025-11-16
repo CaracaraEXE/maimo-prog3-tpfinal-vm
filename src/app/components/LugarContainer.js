@@ -74,6 +74,8 @@ const LugarContainer = ({id}) => {
 
         <h2 className='lg:text-3xl'>Ubicación en el Mapa</h2>
 
+        {lugar.src ? <iframe src={lugar.src} className="border-0" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe> : "NO DATA"}
+
         <h2 className='lg:text-3xl'>¿Como ir?</h2>
             {lugar.howto ? <Link className='bg-gray-700 p-2 px-4 rounded-3xl w-fit m-auto my-4 text-[1em] lg:px-10 lg:text-2xl' href={lugar.howto}>Ver en Google Maps</Link> : "Cargando..."}
         </section>

@@ -60,6 +60,7 @@ const EventoContainer = ({id}) => {
 
 
         <h2 className='lg:text-3xl'>Ubicación en el Mapa</h2>
+        {evento.src ? <iframe src={evento.src} className="border-0 my-2" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe> : "NO DATA"}
 
         <h2 className='lg:text-3xl'>¿Como ir?</h2>
             {evento.howto ? <Link className='bg-gray-700 p-2 px-4 rounded-3xl w-fit m-auto my-4 text-[1em] lg:px-10 lg:text-2xl' href={evento.howto}>Ver en Google Maps</Link> : "Cargando..."}
