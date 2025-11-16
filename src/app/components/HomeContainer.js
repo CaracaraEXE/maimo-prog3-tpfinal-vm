@@ -19,7 +19,7 @@ const HomeContainer = () => {
     </section>
     
     <section className='flex flex-col lg:h-50 lg:flex-row'>
-      <button className='bg-orange-700 h-full w-full text-3xl flex flex-col items-center justify-center py-10'>
+      <Link className='bg-orange-700 h-full w-full text-3xl flex flex-col items-center justify-center py-10' href={'/lugar'}>
          <Image
         src={'/assets/map.svg'}
         alt={'header'}
@@ -28,8 +28,8 @@ const HomeContainer = () => {
         className=''
       />
       Lugares
-      </button>
-      <button className='bg-teal-700 h-full w-full text-3xl flex flex-col items-center justify-center py-10'>
+      </Link>
+      <Link className='bg-teal-700 h-full w-full text-3xl flex flex-col items-center justify-center py-10' href={'/evento'}> 
          <Image
         src={'/assets/calendar.svg'}
         alt={'header'}

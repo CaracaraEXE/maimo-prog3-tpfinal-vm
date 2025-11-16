@@ -44,8 +44,8 @@ const NavBar = () => {
       <li className='mb-3 lg:mb-2 text-2xl lg:text-[1em] hover:font-bold transition'><Link href={'/evento'}>Eventos</Link></li>
       <li className='mb-3 lg:mb-2 text-2xl lg:text-[1em] hover:font-bold transition'><Link href={'/lugar'}>Lugares</Link></li>
       <li className='mb-3 lg:mb-2 text-2xl lg:text-[1em] hover:font-bold transition'>Calendario</li>
-      <li className='mb-3 lg:mb-2 text-2xl lg:text-[1em] hover:font-bold transition'>Sobre Nosotros</li>
-      <li className='text-2xl lg:text-[1em] hover:font-bold transition'>¡NO A LOS CUD FALSOS!</li>
+      <li className='mb-3 lg:mb-2 text-2xl lg:text-[1em] hover:font-bold transition'><Link href={'/nosotros'}>Sobre Nosotros</Link></li>
+      <li className='text-2xl lg:text-[1em] hover:font-bold transition'><Link href={'/alerta'}>¡NO A LOS CUD FALSOS!</Link></li>
     </nav>
     }
     </div>
