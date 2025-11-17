@@ -44,7 +44,7 @@ const HomeContainer = () => {
     <h2 className='lg:text-4xl text-3xl text-center bg-green-800 py-2 font-semibold text-white'>VER POR MAPA:</h2>
 
 
-    <button className='bg-purple-900 p-2 px-4 rounded-3xl w-fit m-auto my-4 text-[1.5em] lg:px-10 lg:text-2xl text-white shadow-green-950 shadow-2xs'>O sino buscá por Barrio! </button>
+    <button className='bg-emerald-800 p-2 px-4 rounded-3xl w-fit m-auto my-4 text-[1.5em] lg:px-10 lg:text-2xl text-white shadow-green-950 shadow-2xs'>O sino buscá por Barrio! </button>
     
     </div>
   )

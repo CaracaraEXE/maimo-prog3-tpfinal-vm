@@ -36,7 +36,7 @@ const LugarContainer = ({id}) => {
       </span>
       </p>
 
-      <h1 className='text-center text-3xl lg:text-5xl bg-green-800 py-4 font-black text-white'>{lugar.nombre}</h1>
+      <h1 className='text-center text-3xl lg:text-5xl bg-emerald-800 py-4 font-black text-white'>{lugar.nombre}</h1>
       <Image
         src={'/assets/squareph.jpg'}
         alt='placeholder'
@@ -89,7 +89,7 @@ const LugarContainer = ({id}) => {
           <ul className='flex gap-2 w-fit mx-auto my-3'>
             { lugar?.semana?
             dias.map((dia, i) =>
-            <li key={dia} className={`semdia list-none p-1 px-2 border-white border-2 rounded-[0.5em] text-white bg-lime-700 ${lugar.semana[i] ? "" : "opacity-50 bg-red-900 text-black"}`}>
+            <li key={dia} className={`semdia list-none p-1 px-2 border-green-800 font-semibold border-2 rounded-[0.5em] text-white bg-lime-700 ${lugar.semana[i] ? "" : "opacity-50 bg-red-900 border-red-800 text-black"}`}>
               {dia}    
             </li>
             )
@@ -120,7 +120,7 @@ const LugarContainer = ({id}) => {
         {lugar.src ? <iframe src={lugar.src} className="border-0 mx-auto w-full lg:w-[50%] lg:h-60 my-4" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe> : "NO DATA"}
 
         <h2 className='lg:text-4xl text-center text-3xl bg-green-800 py-1 mb-5 font-medium text-white'>¿Cómo ir?</h2>
-            {lugar.howto ? <Link className='flex gap-3 bg-purple-900 p-2 px-4 rounded-3xl w-fit m-auto text-[1.5em] lg:px-8 lg:text-2xl mb-5 text-white shadow-green-950 shadow-2xs cursor-pointer' href={lugar.howto}> <Image src={'/assets/map1.svg'} width={30} height={30} alt={"Map icon"}/> Ver en Google Maps</Link> : "Cargando..."}
+            {lugar.howto ? <Link className='flex gap-3 bg-emerald-800 p-2 px-4 rounded-3xl w-fit m-auto text-[1.5em] lg:px-8 lg:text-2xl mb-5 text-white shadow-green-950 shadow-2xs cursor-pointer' href={lugar.howto}> <Image src={'/assets/map1.svg'} width={30} height={30} alt={"Map icon"}/> Ver en Google Maps</Link> : "Cargando..."}
         </div>
     }
 
