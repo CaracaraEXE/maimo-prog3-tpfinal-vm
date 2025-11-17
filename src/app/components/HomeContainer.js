@@ -14,28 +14,26 @@ const HomeContainer = () => {
     <div className='flex flex-col justify-center'>
       
     <section className='bg-[url("/assets/deer.png")] bg-cover bg-center h-120 flex flex-col items-center justify-center px-10 mb-10'>
-      <h1 className='text-5xl text-center'><span className='font-bold'>Vamos Juntos</span>, que afuera está hermoso.</h1>
-          <p className='px-2 text-center py-5'>Guía de viaje por y para personas con discapacidad.</p>
+      <h1 className='text-5xl text-center font-bold text-white'><span className='text-lime-700'>Vamos Juntos</span>, que afuera está hermoso.</h1>
+          <p className='px-2 text-center py-5 font-bold italic'>Guía de viaje por y para personas con discapacidad.</p>
     </section>
     
     <section className='flex flex-col lg:h-50 lg:flex-row'>
-      <Link className='bg-orange-700 h-full w-full text-3xl flex flex-col items-center justify-center py-10' href={'/lugar'}>
+      <Link className='bg-orange-700 h-full w-full text-3xl flex flex-col items-center justify-center py-10 font-bold text-white' href={'/lugar'}>
          <Image
         src={'/assets/map.svg'}
         alt={'header'}
         height={20}
         width={80}
-        className=''
       />
       Lugares
       </Link>
-      <Link className='bg-teal-700 h-full w-full text-3xl flex flex-col items-center justify-center py-10' href={'/evento'}> 
+      <Link className='bg-teal-700 h-full w-full text-3xl flex flex-col items-center justify-center py-10 font-bold text-white' href={'/evento'}> 
          <Image
         src={'/assets/calendar.svg'}
         alt={'header'}
         height={20}
         width={80}
-        className=''
       />
         Eventos
         </Link>

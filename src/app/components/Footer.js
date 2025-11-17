@@ -8,15 +8,7 @@ const Footer = () => {
         <p className='leading-3.5 text-center mb-5 italic'>Toda la información esta sujeta a cambios. Las actualizaciones pueden tardar en aparecer. Tenga paciencia.</p>
 
         <section className='flex lg:justify-between lg:w-full'>
-            <nav className='list-none'>
-                <li className='mt-[-0.25em]  font-bold'>Sobre Nosotros</li>
-                <li className='mt-[-0.25em] lg:mt-[-0.15em] font-bold'><Link href={'/lugar'}>Lugares</Link></li>
-                <li className='mt-[-0.25em] lg:mt-[-0.15em] font-bold'><Link href={'/evento'}>Eventos</Link></li>
-                <li className='mt-[-0.25em] lg:mt-[-0.15em] font-bold'>Mapa</li>
-                <li className='mt-[-0.25em] lg:mt-[-0.15em] font-bold'>Calendario</li>
-                <li className='mt-[-0.10em] lg:mt-[-0.05em] leading-4 font-bold'><Link href={'/alerta'}>¡NO A LOS CUDS FALSOS!</Link></li>
-            </nav>
-            <div className='flex flex-col items-end'>
+            <div className='flex flex-col  items-center'>
                 <p className='leading-3.5'>Seguí el proyecto en:</p>
                 <ul className='flex gap-2'>
                   <li><Image src={'assets/yt.svg'} alt='Youtube' height={10} width={30}/></li>

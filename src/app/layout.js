@@ -1,8 +1,13 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Montserrat, Truculenta } from "next/font/google";
 import "./globals.css";
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
 import { AppContextProvider } from "@/context/AppContext.js";
+
+const montserrat = Montserrat({
+  variable:"--font-montserrat",
+  subsets:["latin"],
+})
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,7 +28,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} antialiased`}
       >
         <AppContextProvider>
         <NavBar/>

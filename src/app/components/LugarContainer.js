@@ -18,48 +18,53 @@ const LugarContainer = ({id}) => {
   return (
     <>
     {!loading &&
-    <div className='flex flex-col items-center justify-center align-center mx-auto w-fit lg:w-full lg:py-6'>
-      <Link href={"/lugar"}>AFUERA</Link>
-      <h1 className='text-center text-3xl lg:text-5xl'>{lugar.nombre}</h1>
+    <div className='lg:w-full lg:py-6 bg-white'>
+      <Link href={"/lugar"} className='text-green-800'>AFUERA</Link>
+      <h1 className='text-center text-3xl lg:text-5xl bg-green-800 py-4'>{lugar.nombre}</h1>
       <Image
         src={'/assets/squareph.jpg'}
         alt='placeholder'
         height={100}
         width={200}
-        className='rounded-2xl lg:w-full lg:h-100'/>
-        <section>
-        <h2 className='lg:text-4xl'>Información basica</h2>
-        <table>
+        className='w-full lg:h-100'/>
+        <section className='lg:flex lg:justify-conter'>
+          <div className='lg:w-full'>
+        <h2 className='lg:text-xl text-center text-3xl bg-green-800 py-2'>Información basica</h2>
+        <table className='text-black w-fit mx-auto'>
           <tbody>
             <tr>
-              <td>Barrios</td>
-              <td>{lugar?.barrio && barrios
+              <td className='p-4 text-2xl font-bold text-end'>Barrios</td>
+              <td className='p-4 text-black text-2xl'>{lugar?.barrio && barrios
                   ? barrios.find(barr => barr._id === lugar.barrio)?.name
                   : "Cargando..."}</td>
             </tr>
             <tr>
-              <td>Dirección</td>
-              <td>{lugar.direccion}</td>
+              <td className='p-4 text-2xl font-bold text-end'>Dirección</td>
+              <td className='p-4 text-2xl'>{lugar.direccion}</td>
             </tr>
           </tbody>
         </table>
+        </div>
 
-
-        <h2 className='lg:text-4xl'>Consideraciones</h2>
-        <table>
+        <div className='lg:w-full'>
+        <h2 className='lg:text-4xl text-center bg-green-800 py-2'>Consideraciones</h2>
+        <table className='text-black w-fit mx-auto'>
           <tbody>
                     <tr>
-              <td>Entrada?</td>
-              <td>{lugar.entrada}</td>
+              <td className='p-4 text-2xl text-end font-bold'>Entrada?</td>
+              <td className='p-4 text-2xl'>{lugar.entrada}</td>
             </tr>
             <tr>
-              <td>Acompañante?</td>
-              <td>{lugar.acompa == false ? "No" : "Sí"}</td>
+              <td className='p-4 text-2xl font-bold'>Acompañante?</td>
+              <td className='p-4 text-2xl'>{lugar.acompa == false ? "No" : "Sí"}</td>
             </tr>
           </tbody>
         </table>
+        </div>
         
-          <ul className='flex gap-2'>
+        <div className='lg:w-full'>
+        <h2 className='lg:text-4xl text-center text-3xl bg-green-800 py-2'>Días de Semana</h2>
+          <ul className='flex gap-2 w-fit mx-auto py-5'>
             { lugar?.semana?
             dias.map((dia, i) =>
             <li key={dia} className={`semdia list-none p-1 px-2 border-white border-2 rounded-[0.5em] text-white bg-lime-700 ${lugar.semana[i] ? "" : "opacity-50 bg-red-900 text-black"}`}>
@@ -70,15 +75,17 @@ const LugarContainer = ({id}) => {
             "Cargando..."
             }
           </ul>
+          </div>
+
+                    </section>
 
 
-        <h2 className='lg:text-3xl'>Ubicación en el Mapa</h2>
+        <h2 className='lg:text-4xl text-center text-3xl bg-green-800 py-1'>Ubicación en el Mapa</h2>
 
-        {lugar.src ? <iframe src={lugar.src} className="border-0" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe> : "NO DATA"}
+        {lugar.src ? <iframe src={lugar.src} className="border-0 mx-auto w-full" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe> : "NO DATA"}
 
-        <h2 className='lg:text-3xl'>¿Como ir?</h2>
-            {lugar.howto ? <Link className='bg-gray-700 p-2 px-4 rounded-3xl w-fit m-auto my-4 text-[1em] lg:px-10 lg:text-2xl' href={lugar.howto}>Ver en Google Maps</Link> : "Cargando..."}
-        </section>
+        <h2 className='lg:text-4xl text-center text-3xl bg-green-800 py-1 mb-5'>¿Cómo ir?</h2>
+            {lugar.howto ? <Link className='bg-gray-700 p-2 px-4 rounded-3xl w-fit m-auto text-[1.5em] lg:px-10 lg:text-2xl mb-5 block' href={lugar.howto}>Ver en Google Maps</Link> : "Cargando..."}
         </div>
     }
 
