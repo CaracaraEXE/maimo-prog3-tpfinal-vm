@@ -10,6 +10,12 @@ const montserrat = Montserrat({
   weight:["400","500","600","700","800"]
 })
 
+const trucu = Truculenta({
+  variable:"--font-truculenta",
+  subsets:["latin"],
+  weight:["400","600","800"],
+})
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -29,7 +35,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} ${trucu.variable} antialiased`}
       >
         <AppContextProvider>
         <NavBar/>
