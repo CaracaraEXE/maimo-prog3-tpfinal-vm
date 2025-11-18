@@ -33,7 +33,7 @@ const MainGrid = ({array}) => {
                   <p className='text-[0.85em]'>Entrada: <span className='font-bold'>{item.entrada}</span></p>
                     {item.fecha ? <p className='text-[0.85em]'>Fecha: <span className='font-bold'>{item.fecha}</span></p> : ""}
                 </div>
-                <Link href={`/${item.fecha ? "evento" : "lugar"}/${item._id}`}>Mira...</Link>
+                <Link href={`/${item.fecha ? "evento" : "lugar"}/${item._id}`} className='font-bold w-fit p-1 px-2 rounded-2xl bg-white text-green-600'>Mas Información</Link>
               </section>
             </article>
         )}

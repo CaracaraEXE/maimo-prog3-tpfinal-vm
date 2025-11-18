@@ -13,7 +13,7 @@ const HomeContainer = () => {
   return (
     <div className='flex flex-col justify-center'>
       
-    <section className='bg-[url("/assets/deer.png")] bg-cover bg-center h-120 lg:h-80 flex flex-col items-center justify-center px-10'>
+    <section className='bg-[url("/assets/anikoplanetario.jpg")] bg-cover bg-center h-120 lg:h-80 flex flex-col items-center justify-center px-10'>
       <h1 className='text-5xl text-center font-bold text-white'><span className='text-lime-700'>Vamos Juntos</span>, que afuera está hermoso.</h1>
           <p className='px-2 text-center py-5 font-bold italic'>Guía de viaje por y para personas con discapacidad.</p>
     </section>

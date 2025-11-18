@@ -5,7 +5,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <footer className='bg-green-800 flex flex-col items-center h-full w-full px-3 lg:px-10 py-4 lg:py-6 text-white'>
-        <p className='leading-3 text-center mb-5 italic font-medium text-[0.5em] lg:text-[0.80em]'>Toda la información esta sujeta a cambios. Las actualizaciones pueden tardar en aparecer. Tenga paciencia.</p>
+        <p className='leading-4 text-center mb-5 italic font-medium text-[0.95em] lg:text-[0.80em]'>Toda la información esta sujeta a cambios. Las actualizaciones pueden tardar en aparecer. Tenga paciencia.</p>
 
         <section className='flex flex-col lg:flex-row lg:justify-evenly lg:w-full'>
               <div className='flex flex-col items-center'>
