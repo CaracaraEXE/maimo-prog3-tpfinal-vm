@@ -15,6 +15,8 @@ export const AppContextProvider = ({children}) =>{
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const [nav, setNav] = useState(false);
+    const [BE, setBE] = useState([]);
+    const [BL, setBL] = useState([]);
 
     const getLugares = useCallback(async() => {
             try{
@@ -68,7 +70,27 @@ export const AppContextProvider = ({children}) =>{
                 setError(true);
 
             }
-        },[])
+        },[]);
+
+        const getBarrioEventos = useCallback(async(id) => {
+            try{
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/barrios/${id}/eventos`);
+                setBE(response.data.eventos);
+            }catch(error){
+                setError(true);
+                alert("BARRIO HAS FAILED")
+            }
+        },[]);
+
+        const getBarrioLugares = useCallback(async(id) => {
+            try{
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/barrios/${id}/lugares`);
+                setBL(response.data.lugares);
+            }catch(error){
+                setError(true);
+                alert("BARRIO HAS FAILED")
+            }
+        },[]);
 
         useEffect(() => {
             getBarrios();
@@ -80,7 +102,7 @@ export const AppContextProvider = ({children}) =>{
     return (
     <AppContext.Provider
         value={{
-            getLugares, lugares, loading, error, getEventos, eventos, barrios, getBarrios, getOneLugar, lugar, nav, setNav, getOneEvento, evento
+            getLugares, lugares, loading, error, getEventos, eventos, barrios, getBarrios, getOneLugar, lugar, nav, setNav, getOneEvento, evento, BL, BE, getBarrioEventos, getBarrioLugares
         }}
     >
         {children}
