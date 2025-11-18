@@ -26,10 +26,10 @@ const AboutContainer = () => {
               />
            
             <p className='text-center leading-8 lg:leading-5 text-[1.30em] lg:text-[1em]'>Las ilustraciones que decoran nuestra pagina son del artista <span className='font-bold'>Ániko Szabo</span>, del genero naif. Sus pinturas de los diversos paisajes de Buenos Aires y su estilo unico ha inspirado el estilo artistico de esta página. Si desean apoyar al artista, dejaremos sus redes abajo:</p>
-            <ul className='flex flex-col lg:flex-row lg:justify-center gap-1 items-center py-2 font-semibold'>
+            <ul className='flex flex-col lg:flex-row lg:justify-center gap-1 lg:gap-4 items-center py-2 font-semibold'>
                 <li className=' text-[1.5em] lg:text-[1em]'><Link className='flex gap-1' href={'https://www.instagram.com/anikoszabonaif'}><Image src={'/assets/ig.svg'} width={20} height={20} alt={"IG icon"}/>Instagram</Link></li>
-                <li className=' text-[1.5em] lg:text-[1em]'><Link className='flex gap-2' href={'https://www.anikoszabo.com.ar/'}><Image src={'/assets/basket.svg'} width={20} height={20} alt={"Store icon"}/>Tienda Online</Link></li>
-                <li className=' text-[1.5em] lg:text-[1em]'><Link className='flex gap-2' href={'https://www.facebook.com/anikoszabo.pinturanaif'}><Image src={'/assets/fb.svg'} width={20} height={20} alt={"FB icon"}/>Facebook</Link></li>
+                <li className=' text-[1.5em] lg:text-[1em]'><Link className='flex gap-1' href={'https://www.anikoszabo.com.ar/'}><Image src={'/assets/basket.svg'} width={20} height={20} alt={"Store icon"}/>Tienda Online</Link></li>
+                <li className=' text-[1.5em] lg:text-[1em]'><Link className='flex gap-1' href={'https://www.facebook.com/anikoszabo.pinturanaif'}><Image src={'/assets/fb.svg'} width={20} height={20} alt={"FB icon"}/>Facebook</Link></li>
             </ul>
 
             <p className='text-center leading-8 lg:leading-5 text-[1.30em] lg:text-[1em]'><Link href={'https://fonts.google.com/specimen/Montserrat'} className='font-bold'>Montserrat,</Link> nuestra fuente principal, es una tipografía inspirada en el diseño grafico del barrio porteño del mismo nombre. Elegimos esta fuente no solo por su estetica, sino tamben por su gran diversidad de grosores, haciendo que sea mucho mas customizable al usar.</p>

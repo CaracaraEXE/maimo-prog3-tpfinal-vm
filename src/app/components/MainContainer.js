@@ -13,7 +13,7 @@ const MainStructure = ({array}) => {
        <>
     {!loading &&
     <div className='lg:w-full lg:py-6 bg-white'>
-      <p className='text-[1em] ml-2 mb-2 font-medium'><Link href={`/${array.fecha ? "evento" : "lugar"}`} className='text-green-800'>{`${array.fecha ? "Eventos" : "Lugares"}`}</Link> 
+      <p className='text-[1em] ml-2 mb-2 font-medium'><Link href={`/${array.fecha ? "evento" : "lugar"}`} className='text-green-800 hover:text-purple-950 transition'>{`${array.fecha ? "Eventos" : "Lugares"}`}</Link> 
       &#5171;
       <span className='ml-2'>
        {array.barrio &&
@@ -79,14 +79,14 @@ const MainStructure = ({array}) => {
                </ul>
             :
             array?.fecha?
-            <p className='text-center mx-auto text-2xl my-4'>Fecha: {array.fecha}</p>
+            <p className='text-center mx-auto text-2xl my-4 lg:text-xl'>Fecha: <span className='font-bold'>{array.fecha}</span></p>
             :
             "Cargando..."
             
             }
 
           
-          <p className='text-center text-2xl mb-3'>
+          <p className='text-center text-2xl mb-3 lg:text-xl'>
            
             {array.horarios ?
             typeof array.horarios === "object" ?
@@ -103,12 +103,13 @@ const MainStructure = ({array}) => {
                     </section>
 
 
+        <section className='bg-emerald-100'>
         <h2 className='lg:text-xl text-center text-3xl bg-green-800 py-1 font-medium text-white'>Ubicación en el Mapa</h2>
-
-        {array.src ? <iframe src={array.src} className="border-0 mx-auto w-full lg:w-[50%] lg:h-60 my-4" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe> : "NO DATA"}
+        {array.src ? <iframe src={array.src} className="border-0 mx-auto w-full lg:w-[50%] lg:h-60 py-4" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe> : "NO DATA"}
+        </section>
 
         <h2 className='lg:text-4xl text-center text-3xl bg-green-800 py-1 mb-5 font-medium text-white'>¿Cómo ir?</h2>
-            {array.howto ? <Link className='flex gap-3 bg-emerald-800 p-2 px-4 rounded-3xl w-fit m-auto text-[1.5em] lg:px-8 lg:text-2xl mb-5 text-white shadow-green-950 shadow-2xs cursor-pointer' href={array.howto}> <Image src={'/assets/map1.svg'} width={30} height={30} alt={"Map icon"}/> Ver en Google Maps</Link> : "Cargando..."}
+            {array.howto ? <Link className='flex gap-3 bg-emerald-800 p-2 px-4 rounded-3xl w-fit m-auto text-[1.5em] lg:px-8 lg:text-2xl mb-5 text-white shadow-green-950 shadow-2xs cursor-pointer hover:bg-purple-950 hover:font-semibold transition' href={array.howto}> <Image src={'/assets/map1.svg'} width={30} height={30} alt={"Map icon"}/> Ver en Google Maps</Link> : "Cargando..."}
         </div>
     }
 

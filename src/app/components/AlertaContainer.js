@@ -6,7 +6,7 @@ const AlertaContainer = () => {
   return (
         <div className=' py-5 '>
           <section className='px-6'>
-            <h1 className='text-[2.5em] text-center my-5 leading-9 font-black text-red-700'>¡NO A LOS CUDS FALSOS!</h1>
+            <h1 className='text-[2.5em] text-center mb-5 leading-9 font-black text-red-700'>¡NO A LOS CUDS FALSOS!</h1>
             <p className='text-center leading-7 lg:leading-7 text-[1.30em] lg:text-[1.25em] lg:px-20'>Todos los beneficios mencionados en esta pagina son por y para <span className='font-bold'>personas con discapacidad. Vamos Juntos se opone totalmente a la falsificación de Certificados Únicos de Discapacidad a modo de obtener "ventajas" sobre otros.</span></p>
           </section>
 
@@ -17,7 +17,6 @@ const AlertaContainer = () => {
         alt='CUD Falso'
         className='w-full my-5 lg:w-[50%] lg:mx-auto'
         />
-
         
         <h2 className='text-3xl bg-green-800 py-2 lg:my-6 text-white text-[2em] lg:text-[2em] text-center leading-9 mt-5 mb-3 font-bold'>¿Qué está pasando?</h2>
         
@@ -44,9 +43,9 @@ const AlertaContainer = () => {
 
        <h3 className='text-[2em] mb-2 lg:text-3xl text-center leading-9 lg:mb-2.5 font-bold text-green-800'>Fuentes</h3>
         <ul className='list-disc px-5 w-[50%] lg:w-[25%] m-auto font-semibold'>
-          <li className='ml-2 text-[1.25em] max-w-80'><Link href={'https://www.asdra.org.ar/destacados/preocupacion-ante-las-palabras-de-la-ministra-bullrich-acerca-de-quienes-cuentan-con-certificado-de-discapacidad/'}>ASDRA</Link></li>
-          <li className='ml-2 text-[1.25em] max-w-80 '><Link href={'https://www.infobae.com/politica/2024/11/26/alerta-en-las-empresas-de-colectivos-por-los-certificados-de-discapacidad-truchos-la-decision-que-tomara-el-gobierno/'}>Infobae</Link></li>
-          <li className='ml-2 text-[1.25em] max-w-80'><Link href={'https://www.lanacion.com.ar/sociedad/imputados-usar-certificados-discapacidad-falsos-podrian-recibir-nid2215622/'}>La Nación</Link></li>
+          <li className='ml-2 text-[1.25em] max-w-80 hover:text-purple-950 transition'><Link href={'https://www.asdra.org.ar/destacados/preocupacion-ante-las-palabras-de-la-ministra-bullrich-acerca-de-quienes-cuentan-con-certificado-de-discapacidad/'}>ASDRA</Link></li>
+          <li className='ml-2 text-[1.25em] max-w-80 hover:text-purple-950 transition '><Link href={'https://www.infobae.com/politica/2024/11/26/alerta-en-las-empresas-de-colectivos-por-los-certificados-de-discapacidad-truchos-la-decision-que-tomara-el-gobierno/'}>Infobae</Link></li>
+          <li className='ml-2 text-[1.25em] max-w-80 hover:text-purple-950 transition'><Link href={'https://www.lanacion.com.ar/sociedad/imputados-usar-certificados-discapacidad-falsos-podrian-recibir-nid2215622/'}>La Nación</Link></li>
         </ul>
 
     </div>

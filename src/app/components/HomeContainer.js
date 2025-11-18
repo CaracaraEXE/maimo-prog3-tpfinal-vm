@@ -13,15 +13,15 @@ const HomeContainer = () => {
   return (
     <div className='flex flex-col justify-center'>
       
-    <section className='bg-[url("/assets/anikoplanetario.jpg")] bg-cover bg-center h-120 lg:h-80 flex flex-col items-center justify-center px-10'>
-      <h1 className='text-5xl text-center font-bold text-white'><span className='text-lime-700'>Vamos Juntos</span>, que afuera está hermoso.</h1>
-          <p className='px-2 text-center py-5 font-bold italic'>Guía de viaje por y para personas con discapacidad.</p>
+    <section className='bg-[url("/assets/anikohero.png")] bg-cover bg-center h-120 lg:h-80 flex flex-col items-center justify-center px-10'>
+      <h1 className='text-5xl text-center font-bold text-white'>Vamos Juntos, que afuera está hermoso.</h1>
+          <p className='px-2 text-center py-5 font-bold italic text-white'>Guía de viaje por y para personas con discapacidad.</p>
     </section>
 
     <p className='text-center font-medium italic py-5'>Ultima actualización: <span className='text-green-700 my-10'>16/11/25</span></p>
     
     <section className='flex flex-col lg:h-50 lg:flex-row'>
-      <Link className='bg-purple-900 h-full w-full text-3xl flex flex-col items-center justify-center py-10 font-bold text-white' href={'/lugar'}>
+      <Link className='bg-purple-950 h-full w-full text-3xl flex flex-col items-center justify-center py-10 font-bold text-white' href={'/lugar'}>
          <Image
         src={'/assets/map.svg'}
         alt={'header'}
@@ -30,7 +30,7 @@ const HomeContainer = () => {
       />
       Lugares
       </Link>
-      <Link className='bg-green-600 h-full w-full text-3xl flex flex-col items-center justify-center py-10 font-bold text-white' href={'/evento'}> 
+      <Link className='bg-green-700 h-full w-full text-3xl flex flex-col items-center justify-center py-10 font-bold text-white' href={'/evento'}> 
          <Image
         src={'/assets/calendar.svg'}
         alt={'header'}

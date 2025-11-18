@@ -18,7 +18,7 @@ const NavBar = () => {
     <section className='bg-white p-2 flex justify-between px-4 lg:px-6'>
       
       {!nav ?
-      <button onClick={() => {setNav(true)}}>
+      <button onClick={() => {setNav(true)}} className='cursor-pointer'>
         <Image
           src={'/assets/menu-hamburger-1.svg'}
           alt='Open menu'
@@ -27,7 +27,7 @@ const NavBar = () => {
         />
       </button>
     :  
-          <button onClick={() => {setNav(false)}}>
+          <button onClick={() => {setNav(false)}} className='cursor-pointer'>
             <Image
           src={'/assets/xmark.svg'}
           alt='X Mark'
@@ -37,7 +37,7 @@ const NavBar = () => {
           </button>
 
     }
-      <Link href={'/'}><span className='text-3xl text-green-800 logo'>VJ</span></Link>
+      <Link href={'/'}><span className='text-3xl text-green-800 logo hover:text-purple-950 transition'>VJ</span></Link>
     </section>
     {nav &&
     <nav className='p-4 pl-8 list-none bg-green-900 text-white font-medium'>
