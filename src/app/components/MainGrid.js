@@ -27,10 +27,14 @@ const MainGrid = ({array}) => {
               <section className='ml-3 py-1 flex flex-col justify-between'>
                 <div>
                   <h2 className='text-[1.20em] min-w-30 lg:max-w-100 leading-5 lg:leading-7 font-semibold line-clamp-2 lg:text-[1.5em]'>{item.nombre}</h2>
-                  <p className='text-[0.80em] lg:text-[0.95em] italic leading-3.5 mt-1'>{item.direccion} - <span>
-                    {
-                      barrios.find(barr => barr._id === item.barrio[0]).name
-                    }
+                  <p className='text-[0.80em] lg:text-[0.95em] italic leading-3.5 lg:leading-4 mt-1'>{item.direccion} - <span>
+                     {item.barrio &&
+                  item.barrio.map((_id) => {
+                    const match = barrios.find(
+                      (barr) => barr._id === _id
+                    );
+                    return match ? match.name : null;
+                  })} 
                     </span></p>
                   <p className='text-[0.85em]'>Entrada: <span className='font-bold'>{item.entrada}</span></p>
                     {item.fecha ? <p className='text-[0.85em]'>Fecha: <span className='font-bold'>{item.fecha}</span></p> : ""}
