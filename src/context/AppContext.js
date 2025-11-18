@@ -18,7 +18,7 @@ export const AppContextProvider = ({children}) =>{
 
     const getLugares = useCallback(async() => {
             try{
-                const response = await axios.get(`https://maimo-prog3-2025-vm-api.vercel.app/lugares`);
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/lugares`);
                 setLugares(response.data.lugares);
                 setLoading(false);
             } catch(error){
@@ -30,7 +30,7 @@ export const AppContextProvider = ({children}) =>{
         const getEventos = useCallback(async() => {
             try{
                 setLoading(true);
-                const response = await axios.get("https://maimo-prog3-2025-vm-api.vercel.app/eventos");
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/eventos`);
                 setEventos(response.data.eventos);
                 setLoading(false);
             }catch(error){
@@ -41,7 +41,7 @@ export const AppContextProvider = ({children}) =>{
 
         const getBarrios = useCallback(async() => {
             try{
-                const response = await axios.get("https://maimo-prog3-2025-vm-api.vercel.app/barrios");
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/barrios`);
                 setBarrios(response.data.barrios);
             }catch(error){
                 setError(true);
@@ -51,7 +51,7 @@ export const AppContextProvider = ({children}) =>{
         
         const getOneLugar = useCallback(async(id)=>{
             try{
-                const res = await axios.get(`https://maimo-prog3-2025-vm-api.vercel.app/lugares/${id}`);
+                const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/lugares/${id}`);
                 setLugar(res.data.lugar);
                 setLoading(false);
             }catch(error){
@@ -61,7 +61,7 @@ export const AppContextProvider = ({children}) =>{
 
         const getOneEvento = useCallback(async(id) => {
             try{
-                const res = await axios.get(`https://maimo-prog3-2025-vm-api.vercel.app/eventos/${id}`);
+                const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/eventos/${id}`);
                 setEvento(res.data.evento);
                 setLoading(false);
             }catch(error){
