@@ -19,11 +19,11 @@ const MainGrid = ({array}) => {
         {array.map(item => 
             <article key={item._id} className='flex bg-emerald-800 m-auto p-2 lg:p-8 my-5 lg:my-3 rounded-2xl  lg:max-w-130 lg:min-w-130 lg:max-h-100 h-fit shadow-md/50 shadow-blue-950 text-white'>
               <Image
-              src={`/assets/db/${array.img}`}
+              src={`/assets/db/${item.img}`}
               alt='placeholder'
               height={100}
               width={100}
-              className='h-25 lg:min-h-40 lg:min-w-40 rounded-2xl'/>
+              className=' object-cover h-25 lg:min-h-40 lg:min-w-40 rounded-2xl'/>
               <section className='ml-3 py-1 flex flex-col justify-between'>
                 <div>
                   <h2 className='text-[1.20em] min-w-30 lg:max-w-100 leading-5 lg:leading-7 font-semibold line-clamp-2 lg:text-[1.5em]'>{item.nombre}</h2>
