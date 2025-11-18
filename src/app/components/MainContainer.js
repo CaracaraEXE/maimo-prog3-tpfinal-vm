@@ -27,14 +27,16 @@ const MainStructure = ({array}) => {
       </p>
 
       <h1 className='text-center text-3xl lg:text-5xl bg-emerald-800 py-4 font-black text-white'>{array.nombre}</h1>
+      <div className=' overflow-hidden'>
       <Image
-        src={'/assets/squareph.jpg'}
+        src={`/assets/db/${array.img}`}
         alt='placeholder'
         height={100}
-        width={200}
-        className='w-full lg:h-100'/>
+        width={500}
+        className='object-cover w-full lg:h-80 min-h-50'/>
+      </div>
         <section className='lg:flex lg:justify-conter'>
-          <div className='lg:w-full'>
+          <div className='lg:w-full lg:border-r-2 lg:border-green-950'>
         <h2 className='lg:text-xl text-center text-3xl bg-green-800 py-2 font-medium text-white'>Información basica</h2>
         <table className='text-black w-full mx-auto'>
           <tbody>
@@ -50,13 +52,13 @@ const MainStructure = ({array}) => {
         </table>
         </div>
 
-        <div className='lg:w-full'>
+        <div className='lg:w-full lg:border-r-2 lg:border-green-950'>
         <h2 className='lg:text-xl text-3xl text-center bg-green-800 py-2 font-medium text-white'>Consideraciones</h2>
         <table className='text-black mx-auto w-full'>
           <tbody>
                     <tr>
-              <td className='p-4 text-2xl lg:text-xl font-bold '>Entrada?</td>
-              <td className='p-4 text-2xl lg:text-xl w-full text-end'>{array.entrada}</td>
+              <td className='p-4 text-2xl lg:text-xl font-bold'>Entrada?</td>
+              <td className='p-4 text-2xl lg:text-xl w-full text-end font-semibold'>{array.entrada}</td>
             </tr>
             <tr>
               <td className='p-4 text-2xl font-bold lg:text-xl '>Acompañante?</td>
@@ -86,18 +88,22 @@ const MainStructure = ({array}) => {
             }
 
           
-          <p className='text-center text-2xl mb-3 lg:text-xl'>
+          <section className='text-center text-2xl mb-3 lg:text-xl'>
            
+           <ul className='flex align-items flex-col'>
             {array.horarios ?
             typeof array.horarios === "object" ?
             array.horarios.map(horario =>
-              <span key={horario}>{horario}</span>
+
+              <li key={horario} className='lg:text-[0.90em] lg:mb-1 m-auto flex justify-start gap-2 w-fit'><Image src={'/assets/alarm.svg'} width={25} height={25} alt={"Clock icon"}/>  {horario}</li>
             )
             :
-            array.horarios
+            <li  className='lg:text-[0.90em] lg:mb-1 m-auto gap-2 flex w-fit'><Image src={'/assets/alarm.svg'} width={30} height={30} alt={"Clock icon"}/> {array.horarios}</li>
         :
         "Cargando"  
-        }</p>
+        }
+        </ul>
+        </section>
           </div>
 
                     </section>

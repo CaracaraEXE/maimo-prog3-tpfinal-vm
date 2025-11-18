@@ -10,6 +10,8 @@ const MainGrid = ({array}) => {
    useEffect(() => {
           getBarrios();
       },[]);
+
+      console.log(array);
   
 
   return (
@@ -17,7 +19,7 @@ const MainGrid = ({array}) => {
         {array.map(item => 
             <article key={item._id} className='flex bg-emerald-800 m-auto p-2 lg:p-8 my-5 lg:my-3 rounded-2xl  lg:max-w-130 lg:min-w-130 lg:max-h-100 h-fit shadow-md/50 shadow-blue-950 text-white'>
               <Image
-              src={'/assets/squareph.jpg'}
+              src={`/assets/db/${array.img}`}
               alt='placeholder'
               height={100}
               width={100}
