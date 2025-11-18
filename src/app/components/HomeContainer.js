@@ -18,7 +18,7 @@ const HomeContainer = () => {
           <p className='px-2 text-center py-5 font-bold italic text-white'>Guía de viaje por y para personas con discapacidad.</p>
     </section>
 
-    <p className='text-center font-medium italic py-5'>Ultima actualización: <span className='text-green-700 my-10'>16/11/25</span></p>
+    <p className='text-center font-medium italic py-5'>Ultima actualización: <span className='text-green-700 my-10'>18/11/25</span></p>
     
     <section className='flex flex-col lg:h-50 lg:flex-row'>
       <Link className='bg-purple-950 h-full w-full text-3xl flex flex-col items-center justify-center py-10 font-bold text-white' href={'/lugar'}>
