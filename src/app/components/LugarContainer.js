@@ -4,7 +4,7 @@ import { useAppContext } from '@/context/AppContext'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect } from 'react'
-import MainStructure from './MainContainer'
+import MainStructure from './MainStructure'
 
 const LugarContainer = ({id}) => {
 
