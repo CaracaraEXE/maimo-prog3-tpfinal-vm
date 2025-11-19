@@ -10,13 +10,17 @@ export const AppContextProvider = ({children}) =>{
     const [lugares, setLugares] = useState([]);
     const [lugar, setLugar] = useState({});
     const [eventos, setEventos] = useState([]);
+    const [evento, setEvento] = useState([]);
     const [barrios, setBarrios] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
+    const [nav, setNav] = useState(false);
+    const [BE, setBE] = useState([]);
+    const [BL, setBL] = useState([]);
 
     const getLugares = useCallback(async() => {
             try{
-                const response = await axios.get(`https://maimo-prog3-2025-vm-api.vercel.app/lugares`);
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/lugares`);
                 setLugares(response.data.lugares);
                 setLoading(false);
             } catch(error){
@@ -28,7 +32,7 @@ export const AppContextProvider = ({children}) =>{
         const getEventos = useCallback(async() => {
             try{
                 setLoading(true);
-                const response = await axios.get("https://maimo-prog3-2025-vm-api.vercel.app/eventos");
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/eventos`);
                 setEventos(response.data.eventos);
                 setLoading(false);
             }catch(error){
@@ -39,7 +43,7 @@ export const AppContextProvider = ({children}) =>{
 
         const getBarrios = useCallback(async() => {
             try{
-                const response = await axios.get("https://maimo-prog3-2025-vm-api.vercel.app/barrios");
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/barrios`);
                 setBarrios(response.data.barrios);
             }catch(error){
                 setError(true);
@@ -49,12 +53,42 @@ export const AppContextProvider = ({children}) =>{
         
         const getOneLugar = useCallback(async(id)=>{
             try{
-                const res = await axios.get(`https://maimo-prog3-2025-vm-api.vercel.app/lugares/${id}`);
-                console.log(res.data.lugar);
+                const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/lugares/${id}`);
                 setLugar(res.data.lugar);
                 setLoading(false);
             }catch(error){
-                console.log(error);
+                setError(true);
+            }
+        },[]);
+
+        const getOneEvento = useCallback(async(id) => {
+            try{
+                const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/eventos/${id}`);
+                setEvento(res.data.evento);
+                setLoading(false);
+            }catch(error){
+                setError(true);
+
+            }
+        },[]);
+
+        const getBarrioEventos = useCallback(async(id) => {
+            try{
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/barrios/${id}/eventos`);
+                setBE(response.data.eventos);
+            }catch(error){
+                setError(true);
+                alert("BARRIO HAS FAILED")
+            }
+        },[]);
+
+        const getBarrioLugares = useCallback(async(id) => {
+            try{
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/barrios/${id}/lugares`);
+                setBL(response.data.lugares);
+            }catch(error){
+                setError(true);
+                alert("BARRIO HAS FAILED")
             }
         },[]);
 
@@ -62,12 +96,13 @@ export const AppContextProvider = ({children}) =>{
             getBarrios();
             getEventos();
             getLugares();
+            setNav(false);
         },[]);
         
     return (
     <AppContext.Provider
         value={{
-            getLugares, lugares, loading, error, getEventos, eventos, barrios, getBarrios, getOneLugar, lugar
+            getLugares, lugares, loading, error, getEventos, eventos, barrios, getBarrios, getOneLugar, lugar, nav, setNav, getOneEvento, evento, BL, BE, getBarrioEventos, getBarrioLugares
         }}
     >
         {children}

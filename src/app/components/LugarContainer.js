@@ -1,29 +1,24 @@
 'use client'
 
 import { useAppContext } from '@/context/AppContext'
+import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect } from 'react'
+import MainStructure from './MainStructure'
 
 const LugarContainer = ({id}) => {
 
-  const {getOneLugar,lugar, loading, error} = useAppContext()
+  const {getOneLugar,lugar, loading, error, getBarrios, barrios} = useAppContext()
 
   useEffect(() => {
     getOneLugar(id);
+    getBarrios();
   },[])
 
-  return (
-    <>
-    {!loading &&
-    <>
-    <Link href={"/"}>AFUERA</Link>
-    <h1>Hola soy {lugar.nombre}</h1>
-    </>
-    }
 
-    {loading && error &&
-    <p>Cargando...</p>}
-    </>
+
+  return (
+    <MainStructure array={lugar}/>
 )
 }
 
