@@ -12,7 +12,7 @@ const LugaresCont = () => {
     },[])
 
   return (
-    <div>
+    <div className='min-h-lvh'>
         <h1 className='text-center text-4xl text-green-700 font-extrabold'>Lugares</h1>
         <MainGrid array={lugares}/>
     </div>

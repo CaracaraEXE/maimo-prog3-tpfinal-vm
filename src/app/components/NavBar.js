@@ -43,6 +43,7 @@ const NavBar = () => {
     <nav className='p-4 pl-8 list-none bg-green-900 text-white font-medium'>
       <li className='mb-3 lg:mb-2 text-2xl lg:text-[1em] hover:font-bold transition cursor-pointer'><Link href={'/evento'}>Eventos</Link></li>
       <li className='mb-3 lg:mb-2 text-2xl lg:text-[1em] hover:font-bold transition cursor-pointer'><Link href={'/lugar'}>Lugares</Link></li>
+      <li className='mb-3 lg:mb-2 text-2xl lg:text-[1em] hover:font-bold transition cursor-pointer'><Link href={'/barrio'}>Barrios</Link></li>
       <li className='mb-3 lg:mb-2 text-2xl lg:text-[1em] hover:font-bold transition cursor-pointer'><Link href={'/nosotros'}>Sobre Nosotros</Link></li>
       <li className='text-2xl lg:text-[1em] hover:font-bold transition font-bold'><Link href={'/alerta'}>¡NO A LOS CUD FALSOS!</Link></li>
     </nav>

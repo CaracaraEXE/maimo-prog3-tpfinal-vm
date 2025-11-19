@@ -17,7 +17,7 @@ const MainGrid = ({array}) => {
   return (
     <section className='px-5 lg:p-5 lg:flex lg:flex-wrap'>
         {array.map(item => 
-            <article key={item._id} className='flex bg-emerald-800 m-auto p-2 lg:p-8 my-5 lg:my-3 rounded-2xl  lg:max-w-130 lg:min-w-130 lg:max-h-100 h-fit shadow-md/50 shadow-blue-950 text-white'>
+            <article key={item._id} className='flex bg-emerald-800 m-auto p-4 lg:p-6 my-5 lg:my-3 rounded-2xl  lg:max-w-130 lg:min-w-130 lg:max-h-100 h-fit shadow-md/50 shadow-blue-950 text-white'>
               <Image
               src={`/assets/db/${item.img}`}
               alt='placeholder'
