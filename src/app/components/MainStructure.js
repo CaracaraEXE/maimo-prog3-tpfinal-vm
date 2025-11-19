@@ -13,16 +13,17 @@ const MainStructure = ({array}) => {
        <>
     {!loading &&
     <div className='lg:w-full lg:py-6 bg-white'>
-      <p className='text-[1em] ml-2 mb-2 font-medium'><Link href={`/${array.fecha ? "evento" : "lugar"}`} className='text-green-800 hover:text-purple-950 transition'>{`${array.fecha ? "Eventos" : "Lugares"}`}</Link> 
+      <p className='text-[1em] ml-2 mb-2 font-medium'><Link href={`/${array.fecha ? "evento" : "lugar"}`} className='text-green-800 hover:text-purple-950 transition'>{`${array.fecha ? "Eventos" : "Lugares"}`} </Link> 
       &#5171;
       <span className='ml-2'>
+       <Link href={`/barrio/${array.barrio}`} className='text-emerald-800 hover:text-purple-900'>
        {array.barrio &&
                   array.barrio.map((_id) => {
                     const match = barrios.find(
                       (barr) => barr._id === _id
                     );
                     return match ? match.name : null;
-                  })} 
+                  })} </Link>
       </span>
       </p>
 
