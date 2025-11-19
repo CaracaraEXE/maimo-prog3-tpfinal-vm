@@ -41,6 +41,9 @@ const HomeContainer = () => {
         </Link>
     </section>
 
+        <Link className='bg-emerald-800 p-2 px-4 rounded-3xl w-fit m-auto my-4 text-[1.5em] lg:px-10 lg:text-2xl text-white shadow-green-950 shadow-2xs' href={"/barrio"}>O sino buscá por Barrio! </Link>
+
+
     </div>
   )
 }

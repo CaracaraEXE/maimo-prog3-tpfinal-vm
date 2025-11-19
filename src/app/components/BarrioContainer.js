@@ -27,23 +27,23 @@ const BarrioContainer = ({id}) => {
         {!loading &&
         <section className='mb-10'>
         <h1 className='text-center text-3xl lg:text-4xl bg-emerald-800 py-4 font-black text-white'>Barrios en Detalle: {esteBarrio}</h1>
-        <h2 className='text-[1.75em] lg:text-3xl text-center mt-5 leading-8 mb-2  font-bold text-green-700'>Lugares en {esteBarrio}</h2>
+        <h2 className='text-[1.75em] lg:text-4xl text-center mt-5 leading-8 mb-2  font-bold text-green-700'>Lugares en {esteBarrio}</h2>
         {BL?
         BL.length?
             <MainGrid array={BL}/>
             :
-            <p className='text-center leading-8 text-[1.30em] lg:text-[1em] italic'>No se encontró ningún lugar.</p>
+            <p className='text-center leading-8 text-[1.30em] lg:text-[1.5em] italic lg:mt-5'>No se encontró ningún lugar.</p>
         :
         "Cargando"
 
         }
 
-        <h2 className='text-[1.75em] lg:text-3xl text-center mt-5 leading-8 mb-2 lg:mb-4 font-bold text-green-700'>Eventos en {esteBarrio}</h2>
+        <h2 className='text-[1.75em] lg:text-4xl text-center mt-5 leading-8 mb-2 lg:mb-4 font-bold text-green-700'>Eventos en {esteBarrio}</h2>
         {BE?
         BE.length?
              <MainGrid array={BE}/>
             :
-             <p className='text-center leading-8 text-[1.30em] lg:text-[1em] italic'>No se encontró ningún evento.</p>
+             <p className='text-center leading-8 text-[1.30em] lg:text-[1.5em] itali lg:mt-5'>No se encontró ningún evento.</p>
         :
         "Cargando"
 
