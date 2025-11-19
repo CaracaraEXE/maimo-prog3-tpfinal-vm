@@ -22,7 +22,7 @@ const BarrioContainer = ({id}) => {
   const esteBarrio = barrios ? barrios.find(barr => barr._id === id)?.name : "ERROR";
 
   return (
-    <div>
+    <div className='min-h-lvh'>
         <Dropdown/>
         {!loading &&
         <section className='mb-10'>
